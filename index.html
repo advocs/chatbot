@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ChatBot </title>
+</head>
+<body>
+
+    <div class="box">
+        <div style="text-align: center;" class="top">
+    <h1>Send A Message !</h1>
+</div>
+    <div class="input">
+    <input type="text" id="userBox"onkeydown="if(event.keyCode== 13){ talk() }"placeholder="Type A Message">
+    </div>
+    <div class="mid">
+        <div class="chat">
+            <h2>Answers Are Below</h2>
+            <p id="chatLog">Let's Chat</p>
+        </div>
+        </div>
+        </div>
+    <style>
+ body{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color: grey;
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-image:url("https://media.istockphoto.com/photos/rays-neon-light-in-the-dark-with-smoke-empty-background-scene-picture-id1297852801?b=1&k=20&m=1297852801&s=170667a&w=0&h=MehtbxH0CEBrqqdzWXw-SXxbGdFgOdJtuh5vKlczZDE=")
+    
+}
+.box{
+    width: 450px;;
+    height: 400px;;
+    top:50%;
+    left:50%;
+    box-shadow:2px 2px 20px violet;
+    position:absolute;
+    transform: translate(-50%, -50%);
+
+}
+.top{
+    width:100%;
+    height:100px;
+    background-color: lightcoral;
+    overflow:hidden;
+
+}
+.top h1{
+    
+    font-family:cursive;
+}
+.input{
+    width:450px;
+    height:120px;
+    overflow:hidden;
+    background-color: aliceblue;
+}
+.input input{
+    width: 450px;
+    height:120px;
+    font-family: fantasy;
+    font-size:xx-large;
+    overflow: hidden;
+    
+    
+}
+.mid{
+    width:100%;
+    height:180px;
+    background-color: aquamarine;
+    overflow: hidden;
+}
+.mid .chat{
+    width:100%;
+}
+.mid .chat h2{
+    text-align: center;
+    font-size:x-large;
+    color:brown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.mid .chat p{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 600;
+    color: blue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+ </style>
+  <script>
+    function talk(){
+        var know ={
+            "Hi":"Hello",
+            "How Are You?":"Great !",
+            "Bye":"Have A Nice Day !",
+            "Hello":"Hi , Whats Up",
+            "Hey there!" :"Hey..How Can I Help You?",
+            "I have an issue" : "Please wait while we connect to our customer service agent",
+        };
+        var user = document.getElementById('userBox').value;
+        document.getElementById('chatLog').innerHTML = user + "<br>";
+        if(user in know){
+            document.getElementById('chatLog').innerHTML = know[user] + "<br>";
+        }else{
+            document.getElementById('chatLog').innerHTML = "I do not understand .";
+        }
+    }
+        </script>
+    </body>
+    </html>
